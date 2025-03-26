@@ -10,7 +10,7 @@ export default function Header({t}) {
   return (
     <div className="container flex justify-content-between" >
       <div className="row">
-        <div className="col-2"style={{textAlign:"center",width:"100%",backgroundColor:"yellow"}}>
+        <div className="col-2"style={{textAlign:"center",width:"100%"}}>
           <Logo />
         </div>
         <div className="col-6" style={{display:"flex",justifyContent:"center",alignItems:"center",textAlign:"center",width:"100%"}}>
