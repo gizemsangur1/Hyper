@@ -1,59 +1,40 @@
-import { Geist, Geist_Mono } from "next/font/google";
+"use client";
+
 import "./globals.css";
-import { ThemeProvider } from "@/context/ThemeContext";
-
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
+import { ThemeProvider, ThemeContext } from "@/context/ThemeContext";
+import Header from "@/components/Header";
+import { useContext, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="tr" data-bs-theme="dark">
       <head>
-      <link rel="stylesheet"
-          href=
-"https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-          integrity=
-"sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
-crossOrigin="anonymous"/>
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+          crossOrigin="anonymous"
+        />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-      <script src=
-"https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity=
-"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-crossOrigin="anonymous">
-      </script>
-
-    <script src=
-"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-            integrity=
-"sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-crossOrigin="anonymous">
-      </script>
-
-    <script src=
-"https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-            integrity=
-"sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-crossOrigin="anonymous">
-      </script>
-      <ThemeProvider>
-      <div className="containermain">
-        {children}
-      </div>
-
-      </ThemeProvider>
-        
+      <body>
+        <ThemeProvider>
+          <LayoutContent>{children}</LayoutContent>
+        </ThemeProvider>
       </body>
     </html>
+  );
+}
+
+function LayoutContent({ children }) {
+  const { t } = useTranslation();
+  const { toggle, mode } = useContext(ThemeContext);
+  const [currency, setCurrency] = useState("USD");
+
+  return (
+    <>
+      <Header t={t} onCurrencyChange={setCurrency} />
+      <div className="containermain">{children}</div>
+    </>
   );
 }

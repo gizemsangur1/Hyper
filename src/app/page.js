@@ -17,7 +17,6 @@ export default function Home() {
   return (
     <div className={styles.main} style={mode==="light"? {border:"white",backgroundColor:"white"}:{border:"black",backgroundColor:"black"}}>
       <main className={styles.main}>
-          <Header t={t} onCurrencyChange={setCurrency} />
           <ProductsPage t={t} mode={mode} currency={currency}/>
       </main>
       <footer className={styles.footer}>

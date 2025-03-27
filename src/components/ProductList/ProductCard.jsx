@@ -1,11 +1,18 @@
+"use client"
 import React from "react";
 import styles from "./styles.module.css";
+import { useRouter } from "next/navigation";
 
 export default function ProductCard({ products, t, mode, currency }) {
   const exchangeRate = 32; 
+  const router = useRouter();
+
+  const handleProductDetail = (product) => {
+    router.push(`/productDetail/${product?.productID}`);
+};
 
   return (
-    <div className="container">
+    <div className="container" >
       <div className="row g-3" style={{ margin: "15px" }}>
         {products.map((product, index) => {
           const convertedPrice =
@@ -55,7 +62,7 @@ export default function ProductCard({ products, t, mode, currency }) {
                 <a className={mode === "light" ? styles.lightText : styles.darkText}>
                   {convertedPrice} {currency === "USD" ? "$" : "₺"}
                 </a>
-                <button
+                <button onClick={() => handleProductDetail(product)}
                   className={mode === "light" ? styles.cardButtonLight : styles.cardButtonDark}
                   style={{
                     width: "80%",
