@@ -1,6 +1,6 @@
 
-export async function fetchProductList() {
-	const response = await fetch('https://api.hyperteknoloji.com.tr/Products/List', {
+export async function fetchProductList(page,pageSize) {
+	const response = await fetch(`https://api.hyperteknoloji.com.tr/Products/List?page=`+page+`&pageSize=`+pageSize, {
 	  method: 'POST',
 	  headers: {
 		"accept": "application/json",

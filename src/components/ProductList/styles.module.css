@@ -1,6 +1,11 @@
 .cardButtonLight {
   background-color: #C9D6DF;
   color: #000; 
+  width: 80%;
+  padding: 3px;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
 }
 
 .cardButtonLight:hover{
@@ -11,6 +16,11 @@
 .cardButtonDark {
   background-color: #52616b;
   color: #fff; 
+  width: 80%;
+  padding: 3px;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
 }
 
 .cardButtonDark:hover{

@@ -16,7 +16,7 @@ const ProductPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetchProductList();
+        const response = await fetchProductList(0);
         const productList = response.data || [];
 
         setProducts(productList);
