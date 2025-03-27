@@ -6,7 +6,7 @@ import Theme from "./Theme";
 import Currency from "./Currency";
 import Cart from "./Cart";
 
-export default function Header({t}) {
+export default function Header({t,onCurrencyChange}) {
   return (
     <div className="container flex justify-content-between" >
       <div className="row">
@@ -25,7 +25,7 @@ export default function Header({t}) {
 				<Theme/>
 			</div>
             <div className="col">
-				<Currency/>
+				<Currency onCurrencyChange={onCurrencyChange}/>
 			</div>
             <div className="col">
 				<Cart/>

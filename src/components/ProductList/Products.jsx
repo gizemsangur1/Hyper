@@ -3,7 +3,7 @@ import { fetchProductList } from "@/app/api/api";
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 
-export default function ProductsPage({t,mode}) {
+export default function ProductsPage({t,mode,currency}) {
   const [products, setProducts] = useState([]); 
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function ProductsPage({t,mode}) {
     <div className="contaianer">
       
       {products.length > 0 ? (
-        <ProductCard products={products} t={t} mode={mode}/>
+        <ProductCard products={products} t={t} mode={mode} currency={currency}/>
   
       ) : (
         <p>Ürün bulunamadı.</p>
