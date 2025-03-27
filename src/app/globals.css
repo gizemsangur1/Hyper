@@ -30,3 +30,11 @@ a{
   text-decoration: none;
   color: inherit;
 }
+
+.cardButtonLight{
+  background-color: #F0F5F9;
+}
+
+.cardButtonDark{
+  background-color: #52616B;
+}

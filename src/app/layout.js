@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-bs-theme="dark">
+    <html lang="tr" data-bs-theme="dark">
       <head>
       <link rel="stylesheet"
           href=

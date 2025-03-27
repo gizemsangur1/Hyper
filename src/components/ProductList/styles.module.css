@@ -1,0 +1,37 @@
+.cardButtonLight {
+  background-color: #C9D6DF;
+  color: #000; 
+}
+
+.cardButtonLight:hover{
+  background-color: #b4c1c9;
+  color: #000;
+}
+
+.cardButtonDark {
+  background-color: #52616b;
+  color: #fff; 
+}
+
+.cardButtonDark:hover{
+  background-color: #424e56;
+  color: #fff;
+}
+
+.lightMode {
+  background-color: #f0f5f9;
+  color: #000;
+}
+
+.darkMode {
+  background-color: #2f3a47;
+  color: #fff;
+}
+
+.lightText{
+  color:black;
+}
+
+.darkText{
+  color: white;
+}
