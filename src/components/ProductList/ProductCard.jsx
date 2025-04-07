@@ -8,7 +8,7 @@ export default function ProductCard({ products, t, mode, currency }) {
   const router = useRouter();
 
   const handleProductDetail = (product) => {
-    router.push(`/productDetail/${product?.productID}`);
+    router.push(`/ProductList/${product?.productID}`);
 };
 
   return (
