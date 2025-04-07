@@ -6,8 +6,14 @@ export default function Currency({ onCurrencyChange }) {
   const toggleCurrency = () => {
     const newCurrency = currency === "USD" ? "TRY" : "USD";
     setCurrency(newCurrency);
-    onCurrencyChange(newCurrency);
+    console.log("Currency changed to:", newCurrency); 
+    if (onCurrencyChange) {
+      onCurrencyChange(newCurrency);
+    } else {
+      console.error("onCurrencyChange function is not defined!");
+    }
   };
+  
 
   return (
     <div style={{ textAlign: "right", padding: "10px" }}>

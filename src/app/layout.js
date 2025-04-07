@@ -1,10 +1,6 @@
-"use client";
-
+"use client"; 
+import { ThemeProvider } from "@/context/ThemeContext";
 import "./globals.css";
-import { ThemeProvider, ThemeContext } from "@/context/ThemeContext";
-import Header from "@/components/Header";
-import { useContext, useState } from "react";
-import { useTranslation } from "react-i18next";
 
 export default function RootLayout({ children }) {
   return (
@@ -19,22 +15,9 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <ThemeProvider>
-          <LayoutContent>{children}</LayoutContent>
+          <div className="containermain">{children}</div>
         </ThemeProvider>
       </body>
     </html>
-  );
-}
-
-function LayoutContent({ children }) {
-  const { t } = useTranslation();
-  const { toggle, mode } = useContext(ThemeContext);
-  const [currency, setCurrency] = useState("USD");
-
-  return (
-    <>
-      <Header t={t} onCurrencyChange={setCurrency} />
-      <div className="containermain">{children}</div>
-    </>
   );
 }
