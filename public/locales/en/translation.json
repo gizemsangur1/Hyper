@@ -2,6 +2,9 @@
 	"search": "Search...",
 	"detail":"Detail",
 	"add":"Add Cart",
-	"nothing":"Not Found"
+	"nothing":"Not Found",
+	"currency":"Currency",
+	"cart":"Cart",
+	"language":"Language"
   }
   

@@ -2,6 +2,9 @@
 	"search": "Arama Yap...",
 	"detail":"Detay",
 	"add":"Sepete Ekle",
-	"nothing":"Bulunamadı"
+	"nothing":"Bulunamadı",
+	"currency":"Para Birimi",
+	"cart":"Sepet",
+	"language":"Dil"
   }
   
