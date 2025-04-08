@@ -16,10 +16,11 @@ export default function Header({ t, onCurrencyChange }) {
   const menuRef = useRef(null);
 
   const handleHamburger = (action) => {
-    const value = action;
-    setAction(value);
+    console.log("clicked action:", action);
+    setAction(action);
     setClicked(true);
   };
+  
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -86,8 +87,8 @@ export default function Header({ t, onCurrencyChange }) {
           <Grid item className="col">
             <Currency onCurrencyChange={onCurrencyChange} />
           </Grid>
-          <Grid item className="col">
-            <Cart />
+          <Grid item className="col"  onClick={() => handleHamburger("cart")}>
+            <Cart/>
           </Grid>
         </Grid>
       </Grid>
@@ -97,6 +98,7 @@ export default function Header({ t, onCurrencyChange }) {
           onCurrencyChange={onCurrencyChange}
           t={t}
           onClose={() => setClicked(false)}
+          onHamburgerClick={handleHamburger}
         />
       )}
     </Grid>
