@@ -5,8 +5,7 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import ClipLoader from "react-spinners/ClipLoader";
 
-export default function SearchBar() {
-  const { t } = useTranslation();
+export default function SearchBar({t}) {
   const [search, setSearch] = useState(false);
   const [word, setWord] = useState("");
   const [results, setResults] = useState([]);
@@ -69,6 +68,7 @@ export default function SearchBar() {
           className="form-control"
           placeholder="Search..."
           onChange={handleSearchChange}
+          autoComplete="none"
           style={{
             backgroundColor: "transparent",
             border: "none",
@@ -145,7 +145,7 @@ export default function SearchBar() {
               </div>
             </>
           ) : (
-            word.length > 3 && <p style={{ margin: 0 }}>Sonuç bulunamadı.</p>
+            word.length > 3 && <p style={{ margin: 0 }}>{t("nothing")}</p>
           )}
         </div>
       )}
