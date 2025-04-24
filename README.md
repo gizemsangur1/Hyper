@@ -16,9 +16,9 @@
 ## Key Features
 *Used API (from (https://api.hyperteknoloji.com.tr/documentation#overview))
 * Dark/Light Theme
-  - Instantly see what your Markdown documents look like in HTML as you create them.
+  - createContext
 * Multi-Language (En/Tr)
-  - While you type, LivePreview will automatically scroll to the current location you're editing.
+  - i18n
 * Currency Change (fixed price for now) 
 * Zustand for state management
 * Responsive
