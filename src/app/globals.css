@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: var(--bg-color);
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+ 
+}
+
+.light{
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+
+.dark{
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.cardButtonLight{
+  background-color: #F0F5F9;
+}
+
+.cardButtonDark{
+  background-color: #52616B;
+}
