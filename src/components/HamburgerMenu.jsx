@@ -4,7 +4,10 @@ import Language from "./Language";
 import Theme from "./Theme";
 import Cart from "./Cart";
 import Currency from "./Currency";
+<<<<<<< HEAD
 import CancelIcon from '@mui/icons-material/Cancel';
+=======
+>>>>>>> 151db515af080da80601783f5d27a7a2a5686865
 
 export default function HamburgerMenu({
   action,
@@ -14,6 +17,7 @@ export default function HamburgerMenu({
   onHamburgerClick,
 }) {
   const [title, setTitle] = useState("");
+<<<<<<< HEAD
   const [cart, setCart] = useState([]);
   const menuRef = useRef(null);
 
@@ -26,6 +30,16 @@ export default function HamburgerMenu({
     if (action == "cart") {
       setTitle("cart");
     }
+=======
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    if (action == "menu") {
+      setTitle("menu");
+    }if(action=="cart"){
+		setTitle("cart");
+	}
+>>>>>>> 151db515af080da80601783f5d27a7a2a5686865
   }, [action]);
 
   useEffect(() => {
@@ -40,6 +54,7 @@ export default function HamburgerMenu({
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [onClose]);
+<<<<<<< HEAD
 
   const handleCancel = (product) => {
     
@@ -59,6 +74,9 @@ export default function HamburgerMenu({
   
 
   console.log(cart);
+=======
+  console.log(action);
+>>>>>>> 151db515af080da80601783f5d27a7a2a5686865
   return (
     <>
       {action === "menu" && (
@@ -74,6 +92,7 @@ export default function HamburgerMenu({
             width: { xs: "45%", sm: "25%" },
             backgroundColor: "#F3F3F3",
             padding: "10px",
+<<<<<<< HEAD
             zIndex: "1000",
           }}
         >
@@ -82,6 +101,20 @@ export default function HamburgerMenu({
               <Theme />
             </Grid>
             <Grid
+=======
+          }}
+        >
+          <Grid container direction="column" spacing={2}>
+            <Grid
+              item
+              xs={12}
+              sx={{ display: "flex", justifyContent: "center" }}
+            >
+              <Theme />
+            </Grid>
+            <Grid
+              item
+>>>>>>> 151db515af080da80601783f5d27a7a2a5686865
               xs={12}
               sx={{ display: "flex", justifyContent: "space-around" }}
             >
@@ -89,11 +122,23 @@ export default function HamburgerMenu({
               <p>{t("language")}</p>
             </Grid>
 
+<<<<<<< HEAD
             <Grid xs={12} sx={{ display: "flex", justifyContent: "center" }}>
+=======
+            <Grid
+              item
+              xs={12}
+              sx={{ display: "flex", justifyContent: "center" }}
+            >
+>>>>>>> 151db515af080da80601783f5d27a7a2a5686865
               <Currency onCurrencyChange={onCurrencyChange} />
               <p>{t("currency")}</p>
             </Grid>
             <Grid
+<<<<<<< HEAD
+=======
+              item
+>>>>>>> 151db515af080da80601783f5d27a7a2a5686865
               xs={12}
               onClick={() => onHamburgerClick("cart")}
               sx={{ display: "flex", justifyContent: "space-around" }}
@@ -117,6 +162,7 @@ export default function HamburgerMenu({
             width: { xs: "45%", sm: "25%" },
             backgroundColor: "#F3F3F3",
             padding: "10px",
+<<<<<<< HEAD
             zIndex: "1000",
           }}
         >
@@ -136,6 +182,12 @@ export default function HamburgerMenu({
               </Grid>
             )}
           </Grid>
+=======
+          }}
+        >
+          <Grid>{t("cart")}</Grid>
+		  
+>>>>>>> 151db515af080da80601783f5d27a7a2a5686865
         </Grid>
       )}
     </>
