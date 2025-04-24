@@ -14,7 +14,7 @@
 
 
 ## Key Features
-*Used API (from https://api.hyperteknoloji.com.tr/)
+*Used API (from (https://api.hyperteknoloji.com.tr/documentation#overview))
 * Dark/Light Theme
   - Instantly see what your Markdown documents look like in HTML as you create them.
 * Multi-Language (En/Tr)
