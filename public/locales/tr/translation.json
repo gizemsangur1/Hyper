@@ -5,6 +5,7 @@
 	"nothing":"Bulunamadı",
 	"currency":"Para Birimi",
 	"cart":"Sepet",
-	"language":"Dil"
+	"language":"Dil",
+	"emptyCart":"Sepetiniz boş"
   }
   

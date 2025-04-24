@@ -1,10 +1,12 @@
 import { Grid } from "@mui/material";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+
 import Language from "./Language";
 import Theme from "./Theme";
 import Cart from "./Cart";
 import Currency from "./Currency";
 import CancelIcon from '@mui/icons-material/Cancel';
+import { useCartStore } from "@/store/cartStore";
 
 export default function HamburgerMenu({
   action,
@@ -14,16 +16,14 @@ export default function HamburgerMenu({
   onHamburgerClick,
 }) {
   const [title, setTitle] = useState("");
-  const [cart, setCart] = useState([]);
+  const { cart, removeFromCart } = useCartStore();  
   const menuRef = useRef(null);
 
   useEffect(() => {
-    const storedCart = JSON.parse(window.localStorage.getItem("cart")) || [];
-    setCart(storedCart);
-    if (action == "menu") {
+    if (action === "menu") {
       setTitle("menu");
     }
-    if (action == "cart") {
+    if (action === "cart") {
       setTitle("cart");
     }
   }, [action]);
@@ -43,22 +43,10 @@ export default function HamburgerMenu({
 
   const handleCancel = (product) => {
     
-    let cart = JSON.parse(window.localStorage.getItem("cart")) || [];
-  
+    removeFromCart(product);
     
-    const updatedCart = cart.filter((item) => item.productID !== product.productID);
-  
-    
-    window.localStorage.setItem("cart", JSON.stringify(updatedCart));
-  
-    
-    setCart(updatedCart);
-  
-    console.log(`Product removed: ${product.productName}`);
   };
-  
 
-  console.log(cart);
   return (
     <>
       {action === "menu" && (
@@ -104,7 +92,7 @@ export default function HamburgerMenu({
           </Grid>
         </Grid>
       )}
-      {action == "cart" && (
+      {action === "cart" && (
         <Grid
           ref={menuRef}
           container
@@ -123,15 +111,14 @@ export default function HamburgerMenu({
           <Grid><h1>{t("cart")}</h1></Grid>
           <Grid container>
             {cart.length === 0 ? (
-              <p>Your cart is empty.</p>
+              <p>{t("emptyCart")}</p> 
             ) : (
               <Grid direction="row">
                 {cart.map((item, index) => (
-                  <Grid key={index} sx={{display:"flex",justifyContent:"space-between"}}>
-                     <p>{item.productName}</p>
-                    <CancelIcon  onClick={() => handleCancel(item)}/>
+                  <Grid key={index} sx={{ display: "flex", justifyContent: "space-between" }}>
+                    <p>{item.productName}</p>
+                    <CancelIcon onClick={() => handleCancel(item)} />
                   </Grid>
-                 
                 ))}
               </Grid>
             )}
